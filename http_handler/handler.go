@@ -14,12 +14,6 @@ type Handler struct {
 	Db     *gorm.DB
 }
 
-const (
-	OSM_API_URL = "https://overpass-api.de/api/map?bbox=%f,%f,%f,%f"
-	OSM_FILE    = "data.osm"
-	TMP_DIR     = "tmp"
-)
-
 func (h *Handler) HandleCoordinates(c *gin.Context) {
 	ctx := c.Request.Context()
 	_, stage1Span := h.Tracer.Start(ctx, "Stage 1 (Validate Body)")

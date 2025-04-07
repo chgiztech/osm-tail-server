@@ -15,6 +15,12 @@ import (
 	"path/filepath"
 )
 
+const (
+	OSM_API_URL = "https://overpass-api.de/api/map?bbox=%f,%f,%f,%f"
+	OSM_FILE    = "data.osm"
+	TMP_DIR     = "tmp"
+)
+
 func validateBody(c *gin.Context, db *gorm.DB) (dto.CoordinateDto, error) {
 	var requestData dto.CoordinateDto
 
