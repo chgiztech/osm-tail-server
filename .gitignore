@@ -1,0 +1,6 @@
+/tmp
+/volumes
+.idea
+.vscode/
+/storage
+.env
