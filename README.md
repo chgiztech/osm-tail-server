@@ -1,10 +1,10 @@
 # 🗺️ OSM Tail Generator & Importer
 
-Go-сервис для генерации `osm-tail` (вырезки из OpenStreetMap по заданной области) и импорта OSM-данных в систему хранения (например, PostgreSQL + PostGIS).
+A Go service for generating osm-tail (a subset of OpenStreetMap data for a given area) and importing OSM data into a storage system (e.g., PostgreSQL + PostGIS).
 
-## 📌 Основные возможности
+## 📌 Key Features
 
--   Импорт `/coordinates/` `.osm.pbf` или `.osm.xml` файлов в БД по координатам (bbox)
+-   Import .osm.pbf or .osm.xml files into the database by coordinates (bbox)
 
 ```JSON
 {
@@ -15,14 +15,14 @@ Go-сервис для генерации `osm-tail` (вырезки из OpenSt
 }
 ```
 
--   Генерация `/tiles/:z/:x/:y` по координатам (bbox)
+-   Generate /tiles/:z/:x/:y based on coordinates (bbox)
 
 ### 🛠️ Настройки env (App)
 
-| Variable Name              | Description          | Example Value |
-| -------------------------- | -------------------- | ------------- |
-| `PORT`                     | Порт                 | 3000          |
-| `ENABLE_HEADER_VALIDATION` | Проверка заголовоков | true          |
+| Variable Name              | Description       | Example Value |
+| -------------------------- | ----------------- | ------------- |
+| `PORT`                     | Port              | 3000          |
+| `ENABLE_HEADER_VALIDATION` | Header validation | true          |
 
 #### Пример `.env` файла:
 
@@ -36,15 +36,15 @@ POSTGRES_PORT=5432
 
 ### 🛠️ Настройки env (PostgreSQL)
 
-| Variable Name       | Description                         | Example Value       |
-| ------------------- | ----------------------------------- | ------------------- |
-| `POSTGRES_DB`       | Название основной базы данных       | `my_database`       |
-| `POSTGRES_USER`     | Имя пользователя PostgreSQL         | `admin`             |
-| `POSTGRES_PASSWORD` | Пароль пользователя PostgreSQL      | `securepassword123` |
-| `POSTGRES_HOST`     | Хост, где запущен PostgreSQL сервер | `localhost` / `db`  |
-| `POSTGRES_PORT`     | Порт PostgreSQL                     | `5432`              |
+| Variable Name       | Description              | Example Value       |
+| ------------------- | ------------------------ | ------------------- |
+| `POSTGRES_DB`       | Вatabase name            | `my_database`       |
+| `POSTGRES_USER`     | PostgreSQL username      | `admin`             |
+| `POSTGRES_PASSWORD` | PostgreSQL user password | `securepassword123` |
+| `POSTGRES_HOST`     | PostgreSQL server host   | `localhost` / `db`  |
+| `POSTGRES_PORT`     | PostgreSQL port          | `5432`              |
 
-#### Пример `.env` файла:
+#### Example `.env` file:
 
 ```ini
 POSTGRES_DB=my_database
@@ -54,9 +54,9 @@ POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 ```
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### 📥 Запуск
+### 📥 Running the Service
 
 ```bash
 go run main.go
